@@ -1,16 +1,13 @@
 package com.hrs.notificationservice.exceptions;
 
-public class NotificationNotFoundException extends RuntimeException {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class NotificationNotFoundException extends  RuntimeException
+{
+    public NotificationNotFoundException()
+    {
 
-	public NotificationNotFoundException() {
-		super();
-	}
-
-	public NotificationNotFoundException(String errorMessage) {
-		super(errorMessage);
-	}
+    }
+    public NotificationNotFoundException(String message)
+    {
+        super(message);
+    }
 }
