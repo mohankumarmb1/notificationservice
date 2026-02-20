@@ -29,7 +29,7 @@ public class NotificationServiceProxy implements INotificationService
     }
 
     @Override
-    public Notification getNotification(Long id) throws NotificationNotFoundException {
+    public Notification getNotification(String id) throws NotificationNotFoundException {
         logger.info("Entry into getNotification method");
         Notification notification = notificationService.getNotification(id);
         logger.info("Exit from getNotification method");
@@ -37,7 +37,7 @@ public class NotificationServiceProxy implements INotificationService
     }
 
     @Override
-    public List<Notification> getNotificationByUserId(Long id) throws NotificationNotFoundException {
+    public List<Notification> getNotificationByUserId(String id) throws NotificationNotFoundException {
         logger.info("Entry into getNotificationByUserId method");
         List<Notification> notifications = notificationService.getNotificationByUserId(id);
         logger.info("Exit from getNotificationByUserId method");
@@ -62,7 +62,7 @@ public class NotificationServiceProxy implements INotificationService
     }
 
     @Override
-    public boolean deleteNotification(Long id) throws NotificationNotFoundException
+    public boolean deleteNotification(String id) throws NotificationNotFoundException
     {
         logger.info("Entry into deleteNotification method");
         boolean status = notificationService.deleteNotification(id);

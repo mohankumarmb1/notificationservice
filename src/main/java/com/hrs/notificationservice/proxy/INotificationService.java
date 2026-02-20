@@ -10,16 +10,16 @@ public interface INotificationService
 
     public Notification notify(Notification notification);
 
-    public Notification getNotification(Long id) throws NotificationNotFoundException;
+    public Notification getNotification(String id) throws NotificationNotFoundException;
 
-    public List<Notification> getNotificationByUserId(Long id) throws NotificationNotFoundException;
+    public List<Notification> getNotificationByUserId(String id) throws NotificationNotFoundException;
     public List<Notification> getAllNotification();
 
 
     public Notification updateNotification(Notification notification) throws NotificationNotFoundException;
 
 
-    public boolean deleteNotification(Long id) throws NotificationNotFoundException;
+    public boolean deleteNotification(String id) throws NotificationNotFoundException;
 
 
 }

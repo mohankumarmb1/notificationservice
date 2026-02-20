@@ -34,12 +34,12 @@ public class NotificationService implements INotificationService
 
     }
 
-    public Notification getNotification(Long id) throws NotificationNotFoundException
+    public Notification getNotification(String id) throws NotificationNotFoundException
     {
         return notificationRepository.findById(id).stream().findAny().orElseThrow(NotificationNotFoundException::new);
     }
 
-    public List<Notification> getNotificationByUserId(Long id)
+    public List<Notification> getNotificationByUserId(String id)
     {
         return notificationRepository.findByUserId(id);
     }
@@ -72,7 +72,7 @@ public class NotificationService implements INotificationService
     }
 
     @Override
-    public boolean deleteNotification(Long id) throws NotificationNotFoundException
+    public boolean deleteNotification(String id) throws NotificationNotFoundException
     {
         if(notificationRepository.existsById(id))
         {

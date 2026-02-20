@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/notification")
+@RequestMapping("/api/v1/notification")
 public class NotificationController
 {
 
@@ -27,13 +27,13 @@ public class NotificationController
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Notification> getNotification(@PathVariable Long id) throws NotificationNotFoundException
+    ResponseEntity<Notification> getNotification(@PathVariable String id) throws NotificationNotFoundException
     {
         return ResponseEntity.status(HttpStatus.OK).body(notificationService.getNotification(id));
     }
 
     @GetMapping("/customer/{id}")
-    ResponseEntity<List<Notification>> getNotificationByCustomer(@PathVariable Long id)
+    ResponseEntity<List<Notification>> getNotificationByCustomer(@PathVariable String id)
     {
         return ResponseEntity.status(HttpStatus.OK).body(notificationService.getNotificationByUserId(id));
     }
@@ -51,7 +51,7 @@ public class NotificationController
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Boolean> deleteNotification(@PathVariable Long id) throws NotificationNotFoundException
+    ResponseEntity<Boolean> deleteNotification(@PathVariable String id) throws NotificationNotFoundException
     {
         return ResponseEntity.status(HttpStatus.OK).body(notificationService.deleteNotification(id));
     }
